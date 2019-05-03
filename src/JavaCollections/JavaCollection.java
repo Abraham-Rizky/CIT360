@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -15,7 +15,7 @@ public class JavaCollection {
         //Set Collection
         System.out.println("\nA. Set Collection :"); 
         //A Set is a Collection that cannot contain duplicate element
-        List<Integer> listNumbers = Arrays.asList(3, 9, 1, 4, 7, 2, 5, 3, 8, 9, 1, 3, 8, 6);
+        List<Integer> listNumbers = Arrays.asList(9, 1, 4, 7, 2, 5, 3, 4, 9, 1, 3, 8, 6, 10);
         System.out.println("Numbers:");
         System.out.println(listNumbers);
         Set<Integer> uniqueNumbers = new HashSet<>(listNumbers);
@@ -44,22 +44,22 @@ public class JavaCollection {
         //A Map is an object that maps keys to values
         Map<String, String> mapContacts = new LinkedHashMap<>();
         //Using put operation
-        mapContacts.put("0945678912", "Mary");
-        mapContacts.put("0169238175", "Tom");
-        mapContacts.put("0904891321", "Peter");
-        mapContacts.put("0981127421", "John");
+        mapContacts.put("2083090000", "Ryan");
+        mapContacts.put("2083090001", "Kris");
+        mapContacts.put("2083090002", "Rizky");
+        mapContacts.put("2083090003", "Abraham");
         System.out.println(mapContacts);
         //Using get operation to get a value
-        String value = mapContacts.get("0169238175");
+        String value = mapContacts.get("2083090002");
         System.out.println(value);
 
         //Queue Collection
         System.out.println("\nD. Queue Collection :"); 
         //A Queue is a collection for holding elements prior to processing
         //Queues typically, but not necessarily, order elements in a FIFO (first-in-first-out) manner
-        List<String> listNames = Arrays.asList("Alice", "Fred", "Cole", "Dale", "Eric", "Frank");
+        List<String> listNames = Arrays.asList("Antonio", "Fred", "Ashley", "David", "Eric", "Bryan");
         Queue<String> queueNames = new LinkedList<>(listNames);
-        queueNames.add("Mary");
+        queueNames.add("Mike");
         queueNames.add("John");
         System.out.println(queueNames);
         
