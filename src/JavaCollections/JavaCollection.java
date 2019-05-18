@@ -88,7 +88,7 @@ public class JavaCollection {
         String status301 = mapHttpErrors.get(301);
         System.out.println("\n301: " + status301);
         
-        //Checking if map conatins a specified key
+        //Checking if map contains a specified key
         if (mapHttpErrors.containsKey("600")) {
             System.out.println("Http status 600");
         } else{ 
