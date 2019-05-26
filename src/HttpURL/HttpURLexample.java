@@ -40,7 +40,7 @@ private final String USER_AGENT = "Mozilla/5.0";
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-		String url = "http://www.rizkyabraham.com/search?q=bali";
+		String url = "http://www.google.com/search?q=bali";
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
