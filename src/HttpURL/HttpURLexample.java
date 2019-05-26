@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package HttpURL;
+import com.sun.javafx.binding.Logging;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -19,7 +21,8 @@ public class HttpURLexample {
 private final String USER_AGENT = "Mozilla/5.0";
 
 	public static void main(String[] args) throws Exception {
-
+            //add connection/socket time out and catch exception
+            try{
 		HttpURLexample http = new HttpURLexample();
 
 		System.out.println("Testing 1 - Send Http GET request");
@@ -27,20 +30,25 @@ private final String USER_AGENT = "Mozilla/5.0";
 		
 		System.out.println("\nTesting 2 - Send Http POST request");
 		http.sendPost();
-
+            } catch (SocketTimeoutException exception) {
+                System.out.println(exception);
+            } catch (java.io.IOException e) {
+                System.out.println("Error: " + e);
+            }
 	}
 
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-		String url = "http://www.google.com/search?q=mkyong";
+		String url = "http://www.rizkyabraham.com/search?q=bali";
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
 		// optional default is GET
 		con.setRequestMethod("GET");
-
+                con.setConnectTimeout(5000);
+                con.setReadTimeout(5000);
 		//add request header
 		con.setRequestProperty("User-Agent", USER_AGENT);
 
